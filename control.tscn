@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://0wy85p6ds4bt"]
+[gd_scene load_steps=10 format=3 uid="uid://0wy85p6ds4bt"]
 
 [ext_resource type="Texture2D" uid="uid://bigq0ns23gihs" path="res://assets/UI/Banners/Carved_9Slides.png" id="1_0fbet"]
 [ext_resource type="Script" uid="uid://b26c0ai16285q" path="res://Intro.gd" id="1_iy58a"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://4l5a5xsrx2q" path="res://assets/UI/Buttons/Button_Disable_3Slides.png" id="3_kbped"]
 [ext_resource type="Texture2D" uid="uid://5ln66il0frfu" path="res://assets/UI/Buttons/Button_Red_3Slides_Pressed.png" id="4_fj5cn"]
 [ext_resource type="Texture2D" uid="uid://cpvj2vw0ss8rk" path="res://assets/UI/Buttons/Button_Hover_3Slides.png" id="5_iy58a"]
+[ext_resource type="Texture2D" uid="uid://d31j3tledji0o" path="res://assets/UI/Buttons/Button_Red_3Slides.png" id="7_6a6wx"]
+[ext_resource type="Texture2D" uid="uid://qylfg313m3d4" path="res://assets/UI/Buttons/Button_Blue_3Slides_Pressed.png" id="8_sky72"]
+[ext_resource type="Texture2D" uid="uid://ctcugediku7vy" path="res://assets/UI/Buttons/Button_Blue_3Slides.png" id="9_sky72"]
 
 [node name="Intro" type="Control"]
 layout_mode = 3
@@ -26,6 +29,21 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_0fbet")
 
+[node name="story" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -479.0
+offset_top = 52.0
+offset_right = 504.0
+offset_bottom = 159.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_62e2m")
+theme_override_font_sizes/font_size = 30
+text = "Story"
+autowrap_mode = 2
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -42,6 +60,7 @@ grow_vertical = 2
 
 [node name="LineEdit" type="LineEdit" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("2_62e2m")
 theme_override_font_sizes/font_size = 35
 placeholder_text = "Enter your name"
@@ -69,3 +88,51 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_62e2m")
 theme_override_font_sizes/font_size = 30
 text = "Accept"
+
+[node name="accept" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("7_6a6wx")
+texture_pressed = ExtResource("8_sky72")
+texture_hover = ExtResource("4_fj5cn")
+
+[node name="Label" type="Label" parent="VBoxContainer/accept"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.0
+offset_top = -22.5
+offset_right = 57.0
+offset_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_62e2m")
+theme_override_font_sizes/font_size = 30
+text = "Completed"
+
+[node name="newgame" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("9_sky72")
+texture_pressed = ExtResource("8_sky72")
+
+[node name="Label" type="Label" parent="VBoxContainer/newgame"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -22.5
+offset_right = 61.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_62e2m")
+theme_override_font_sizes/font_size = 30
+text = "New Game"
