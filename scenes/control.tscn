@@ -1,0 +1,138 @@
+[gd_scene load_steps=10 format=3 uid="uid://0wy85p6ds4bt"]
+
+[ext_resource type="Script" uid="uid://b26c0ai16285q" path="res://Intro.gd" id="1_hob4j"]
+[ext_resource type="Texture2D" uid="uid://bigq0ns23gihs" path="res://assets/game/UI/Banners/Carved_9Slides.png" id="2_01bab"]
+[ext_resource type="FontFile" uid="uid://d4dd3p8ohyft0" path="res://assets/game/UI/Jacquard12-Regular.ttf" id="3_exs80"]
+[ext_resource type="Texture2D" uid="uid://4l5a5xsrx2q" path="res://assets/game/UI/Buttons/Button_Disable_3Slides.png" id="4_kql7n"]
+[ext_resource type="Texture2D" uid="uid://5ln66il0frfu" path="res://assets/game/UI/Buttons/Button_Red_3Slides_Pressed.png" id="5_tac8f"]
+[ext_resource type="Texture2D" uid="uid://cpvj2vw0ss8rk" path="res://assets/game/UI/Buttons/Button_Hover_3Slides.png" id="6_vb5ih"]
+[ext_resource type="Texture2D" uid="uid://d31j3tledji0o" path="res://assets/game/UI/Buttons/Button_Red_3Slides.png" id="7_6pn8l"]
+[ext_resource type="Texture2D" uid="uid://qylfg313m3d4" path="res://assets/game/UI/Buttons/Button_Blue_3Slides_Pressed.png" id="8_0jf8d"]
+[ext_resource type="Texture2D" uid="uid://ctcugediku7vy" path="res://assets/game/UI/Buttons/Button_Blue_3Slides.png" id="9_apcft"]
+
+[node name="Intro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(-241, 283)
+script = ExtResource("1_hob4j")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_01bab")
+
+[node name="story" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -479.0
+offset_top = 52.0
+offset_right = 504.0
+offset_bottom = 159.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_exs80")
+theme_override_font_sizes/font_size = 30
+text = "Story"
+autowrap_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -201.0
+offset_top = -140.5
+offset_right = 201.0
+offset_bottom = 140.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_exs80")
+theme_override_font_sizes/font_size = 35
+placeholder_text = "Enter your name"
+
+[node name="Button" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("4_kql7n")
+texture_pressed = ExtResource("5_tac8f")
+texture_hover = ExtResource("6_vb5ih")
+
+[node name="Label" type="Label" parent="VBoxContainer/Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.0
+offset_top = -15.5
+offset_right = 37.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_exs80")
+theme_override_font_sizes/font_size = 30
+text = "Accept"
+
+[node name="accept" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("7_6pn8l")
+texture_pressed = ExtResource("8_0jf8d")
+texture_hover = ExtResource("5_tac8f")
+
+[node name="Label" type="Label" parent="VBoxContainer/accept"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.0
+offset_top = -22.5
+offset_right = 57.0
+offset_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_exs80")
+theme_override_font_sizes/font_size = 30
+text = "Completed"
+
+[node name="newgame" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("9_apcft")
+texture_pressed = ExtResource("8_0jf8d")
+
+[node name="Label" type="Label" parent="VBoxContainer/newgame"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -22.5
+offset_right = 61.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_exs80")
+theme_override_font_sizes/font_size = 30
+text = "New Game"
