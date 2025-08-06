@@ -6,8 +6,6 @@ var is_attack := false
 
 @onready var _animation_player = $AnimatedSprite2D;
 
-func _ready() -> void:
-	_animation_player.play("idle")
 
 func _physics_process(delta: float) -> void:
 	var move_direction = Input.get_vector("left", "right", "up", "down")
