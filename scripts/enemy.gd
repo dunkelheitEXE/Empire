@@ -9,17 +9,18 @@ var is_attack := false
 
 func _physics_process(delta: float) -> void:
 	if !is_attack and player:
-		sprites.play("run")
 		detect()
-		
 	move_and_slide()
 
 func detect():
 	var pos_x = player.position.x - position.x
 	var pos_y = player.position.y - position.y
 	
-	var max_pos = 100
-	if pos_x <= max_pos or pos_y <= max_pos:
+	var pos_gen = sqrt(pos_x * pos_x + pos_y * pos_y)
+	
+	var max_pos = 400
+	if pos_gen <= max_pos:
+		sprites.play("run")
 		var direction = (player.position - position).normalized()
 		if direction:
 			velocity = direction * move_speed
