@@ -41,7 +41,7 @@ func attack():
 
 func die():
 	print("game over")
-	get_tree().paused = true
+	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if _animation_player.animation == "attack":

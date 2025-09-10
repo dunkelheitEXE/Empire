@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=3 uid="uid://cvwwvxr6sld55"]
+
+[ext_resource type="Script" uid="uid://crqrbqluroxqw" path="res://scripts/win.gd" id="1_tylv2"]
+[ext_resource type="Texture2D" uid="uid://bigq0ns23gihs" path="res://assets/game/UI/Banners/Carved_9Slides.png" id="1_yxbqr"]
+[ext_resource type="FontFile" uid="uid://d4dd3p8ohyft0" path="res://assets/game/UI/Jacquard12-Regular.ttf" id="2_tylv2"]
+[ext_resource type="Texture2D" uid="uid://ctcugediku7vy" path="res://assets/game/UI/Buttons/Button_Blue_3Slides.png" id="3_5vxan"]
+[ext_resource type="Texture2D" uid="uid://qylfg313m3d4" path="res://assets/game/UI/Buttons/Button_Blue_3Slides_Pressed.png" id="4_4826q"]
+
+[node name="win" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tylv2")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_yxbqr")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -51.5
+offset_top = 81.0
+offset_right = 51.5
+offset_bottom = 104.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_tylv2")
+theme_override_font_sizes/font_size = 60
+text = "You have win"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -16.0
+offset_top = 191.0
+offset_right = 24.0
+offset_bottom = 231.0
+grow_horizontal = 2
+texture_normal = ExtResource("3_5vxan")
+texture_pressed = ExtResource("4_4826q")
+texture_hover = ExtResource("4_4826q")
+
+[node name="Label" type="Label" parent="TextureButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Restart"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
